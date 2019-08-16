@@ -1,5 +1,5 @@
 class ChittersController < ApplicationController
-  before_action :set_chatter, only: [:edit, :update, :destroy]
+  before_action :set_chitter, only: [:edit, :update, :destroy]
   before_action :set_order, only:[:index, :create, :confirm]
 
   def index
@@ -46,7 +46,7 @@ class ChittersController < ApplicationController
     params.require(:chitter).permit(:tweet)
   end
 
-  def set_chatter
+  def set_chitter
     @chitter = Chitter.find(params[:id])
   end
 
