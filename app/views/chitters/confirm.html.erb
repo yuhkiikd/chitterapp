@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ChitterApp</title>
-</head>
-<body>
+<%= render 'header' %>
+  <article>
     <h3>この内容でツイートする。</h3>
-    <%= form_with(model: @chitter, url: choose_new_or_edit, local: true) do |form| %>
-        <%= form.hidden_field :tweet %>
+    <%= form_with(model: @chitter, url: chitters_path, local: true) do |form| %>
+      <%= form.hidden_field :tweet %>
 
-        <div class="chitter_tweet">
-            <%= form.label :tweet %>
-            <%= form.text_field :tweet %>
-        </div>
-        <%= form.submit "ツイート" %>
-        <%= form.submit "戻る", name: 'back' %>
+      <div class="chitter_tweet">
+        <%= form.label :chitter %>
+        <%= form.text_field :tweet %>
+      </div>
+      <ul class="chitter_botton">
+        <li class="botton_tweet"><%= form.submit "ツイート" %></li>
+        <li class="botton_back"><%= form.submit "戻る", name: 'back' %></li>
+      </ul>
     <% end %>
-</body>
-</html>
+  </article>
+    
+<%= render 'footer' %>

@@ -1,17 +1,17 @@
 <%= form_with(model: @chitter, local: true, url: choose_new_or_edit) do |form| %>
-    <% if @chitter.errors.any? %>
-        <div id="error_explanation">
-            <ul>
-            <% @chitter.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-            </ul>
-        </div>
-    <% end %>
-
-    <div class="chitter_tweet">
-        <%= form.label :tweet %>
-        <%= form.text_field :tweet %>
+  <% if @chitter.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @chitter.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
-    <%= form.submit %>
+  <% end %>
+
+  <div class="chitter_tweet">
+    <%= form.label :chitter %>
+    <%= form.text_field :tweet %>
+  </div>
+  <%= form.submit "確認画面" %>
 <% end %>

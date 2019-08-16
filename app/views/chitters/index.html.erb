@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ChitterApp</title>
-</head>
-<body>
-    <h1>ツイート一覧</h1>
-    <h2>つぶやく</h2>
-    <%= render 'form' %>
+<%= render 'header' %>
 
-    <hr>
+    <article class="chitter_form">
+      <section>
+        <%= render 'form' %>
+      </section>
+      <section>
+        <p>
+          <%= notice %>
+        </p>
+      </section>
+    </article>
 
-    <p><%= notice %></p>
-    <% @chitters.each do |chitter| %>
-        <div>
+    <article class="chitter_lists">
+      <div class="chitter_content">
+        <% @chitters.each do |chitter| %>
+          <div class="chitter_comment">
             <%= chitter.tweet %>
-            <%= link_to "編集", edit_chitter_path(chitter.id) %>
-            <%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %>
-        </div>
-    <% end %>
-</body>
-</html>
+            <ul class="chitter_botton">
+              <li class="botton_edit"><%= link_to "編集", edit_chitter_path(chitter.id) %></li>
+              <li class="botton_delete"><%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %></li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </article>
+
+<%= render 'footer' %>
