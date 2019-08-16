@@ -7,23 +7,7 @@
     <title>ChitterApp</title>
 </head>
 <body>
-    <%= form_with(model: @chitter, local: true) do |form| %>
-        <% if @chitter.errors.any? %>
-            <div id="error_explanation">
-                <h2><%= @chitter.errors.count %>件のエラーがあります。</h2>
-                <ul>
-                <% @chitter.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-                </ul>
-            </div>
-        <% end %>
-
-        <div class="chitter_tweet">
-            <%= form.label :tweet %>
-            <%= form.text_field :tweet %>
-        </div>
-        <%= form.submit %>
-    <% end %>
+    <h2>つぶやく</h2>
+    <%= render 'form' %>
 </body>
 </html>
