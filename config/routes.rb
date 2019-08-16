@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'chitters#index'
-  resources :chitters, expect: [:show] do
+  resources :chitters, expect: [:show, :new] do
     collection do
       post :confirm
       get :confirm

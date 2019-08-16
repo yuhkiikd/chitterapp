@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>ツイート一覧</h1>
+    <h2>つぶやく</h2>
+    <%= render 'form' %>
+
+    <hr>
+    
     <p><%= notice %></p>
     <% @chitters.each do |chitter| %>
         <div>

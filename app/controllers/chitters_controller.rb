@@ -2,16 +2,19 @@ class ChittersController < ApplicationController
   before_action :set_chatter, only: [:edit, :update, :destroy]
   def index
     @chitters = Chitter.all.order('id DESC')
+    @chitter = Chitter.new
   end
 
   def new
     @chitter = Chitter.new
+    render :index
   end
 
   def create
+    @chitters = Chitter.all.order('id DESC')
     @chitter = Chitter.new(chitter_params)
     if params[:back]
-      render :new
+      render :index
     else
       if @chitter.save
         redirect_to chitters_path, notice: "ツイートを投稿しました！"
@@ -38,8 +41,9 @@ class ChittersController < ApplicationController
   end
 
   def confirm
+    @chitters = Chitter.all.order('id DESC')
     @chitter = Chitter.new(chitter_params)
-    render :new if @chitter.invalid?
+    render :index if @chitter.invalid?
   end
 
   private
