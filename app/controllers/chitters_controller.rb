@@ -1,6 +1,6 @@
 class ChittersController < ApplicationController
   def index
-    @chitters = Chitter.all
+    @chitters = Chitter.all.order('id DESC')
   end
 
   def new
@@ -13,6 +13,19 @@ class ChittersController < ApplicationController
       redirect_to chitters_path, notice: "ツイートを投稿しました！"
     else
       render :new
+    end
+  end
+
+  def edit
+    @chitter = Chitter.find(params[:id])
+  end
+
+  def update
+    @chitter = Chitter.find(params[:id])
+    if @chitter.update(chitter_params)
+      redirect_to chitters_path, notice: "ツイートを更新しました！"
+    else
+      render :edit
     end
   end
 

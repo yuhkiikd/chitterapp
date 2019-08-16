@@ -11,7 +11,10 @@
     <% @chitters.each do |chitter| %>
         <div>
             <%= chitter.tweet %>
+            <%= link_to "編集", edit_chitter_path(chitter.id) %>
         </div>
     <% end %>
+
+    <%= link_to '新規ツイートを投稿する', new_chitter_path %>
 </body>
 </html>
