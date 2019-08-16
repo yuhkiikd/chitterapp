@@ -1,17 +1,12 @@
 class ChittersController < ApplicationController
   before_action :set_chatter, only: [:edit, :update, :destroy]
-  def index
-    @chitters = Chitter.all.order('id DESC')
-    @chitter = Chitter.new
-  end
+  before_action :set_order, only:[:index, :create, :confirm]
 
-  def new
+  def index
     @chitter = Chitter.new
-    render :index
   end
 
   def create
-    @chitters = Chitter.all.order('id DESC')
     @chitter = Chitter.new(chitter_params)
     if params[:back]
       render :index
@@ -41,7 +36,6 @@ class ChittersController < ApplicationController
   end
 
   def confirm
-    @chitters = Chitter.all.order('id DESC')
     @chitter = Chitter.new(chitter_params)
     render :index if @chitter.invalid?
   end
@@ -55,4 +49,9 @@ class ChittersController < ApplicationController
   def set_chatter
     @chitter = Chitter.find(params[:id])
   end
+
+  def set_order
+    @chitters = Chitter.all.order('id DESC')
+  end
+  
 end

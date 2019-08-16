@@ -12,7 +12,7 @@
     <%= render 'form' %>
 
     <hr>
-    
+
     <p><%= notice %></p>
     <% @chitters.each do |chitter| %>
         <div>
@@ -21,7 +21,5 @@
             <%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %>
         </div>
     <% end %>
-
-    <%= link_to '新規ツイートを投稿する', new_chitter_path %>
 </body>
 </html>
