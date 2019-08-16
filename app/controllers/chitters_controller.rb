@@ -14,7 +14,7 @@ class ChittersController < ApplicationController
       if @chitter.save
         redirect_to chitters_path, notice: "ツイートを投稿しました！"
       else
-        render :new
+        render :index
       end
     end
   end
@@ -53,5 +53,5 @@ class ChittersController < ApplicationController
   def set_order
     @chitters = Chitter.all.order('id DESC')
   end
-  
+
 end
