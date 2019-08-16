@@ -1,11 +1,19 @@
 class ChittersController < ApplicationController
+  def index
+    @chitters = Chitter.all
+  end
+
   def new
     @chitter = Chitter.new
   end
 
   def create
-    Chitter.create(chitter_params)
-    redirect_to new_chitter_path
+    @chitter = Chitter.new(chitter_params)
+    if @chitter.save
+      redirect_to chitters_path, notice: "ツイートを投稿しました！"
+    else
+      render :new
+    end
   end
 
   private
