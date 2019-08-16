@@ -1,7 +1,6 @@
-<%= form_with(model: @chitter, local: true,url: choose_new_or_edit) do |form| %>
+<%= form_with(model: @chitter, local: true, url: choose_new_or_edit) do |form| %>
     <% if @chitter.errors.any? %>
         <div id="error_explanation">
-            <h2><%= @chitter.errors.count %>件のエラーがあります。</h2>
             <ul>
             <% @chitter.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>

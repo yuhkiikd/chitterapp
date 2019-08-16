@@ -3,7 +3,7 @@ module ChittersHelper
     if action_name == 'confirm' || action_name == 'create' || action_name == 'index'
        confirm_chitters_path
     elsif action_name == 'edit'
-       chatter_path
+       chitter_path
     end
   end
 end
