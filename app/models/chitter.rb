@@ -1,0 +1,2 @@
+class Chitter < ApplicationRecord
+end
