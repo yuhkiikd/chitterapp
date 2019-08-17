@@ -1,4 +1,4 @@
-/*ベーシック設定*/
+/*=============ベーシック設定=============*/
 * {
   padding-inline-start: 0;
 }
@@ -15,7 +15,7 @@ button {
   border-width: 0;
 }
 
-/*ヘッダー*/
+/*=============ヘッダー=============*/
 header {
   background: #ffa84c; /* Old browsers */
   background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
@@ -35,13 +35,13 @@ header {
   }
 }
 
-/*メイン部分*/
+/*=============メイン部分=============*/
 #wrapper {
     min-height: 100%;
     position: relative;
 }
 
-/*入力フォーム*/
+/*=============入力フォーム=============*/
 .chitter_form {
   margin: 10px auto;
   width: 500px;
@@ -62,7 +62,7 @@ header {
   }
 }
 
-/*アラートメッセージ*/
+/*=============アラートメッセージ=============*/
 .alart {
   float: left;
   height: 50px;
@@ -75,7 +75,7 @@ header {
   list-style-type: none;
 }
 
-/*ボタン基本*/
+/*=============ボタン基本=============*/
 .button_left {
   background:#28aaa5;
   color: #fff;
@@ -128,7 +128,7 @@ header {
   }
 }
 
-/*コメント一覧*/
+/*=============コメント一覧=============*/
 .chitter_lists{
   padding-bottom: 100px;  
 }
@@ -183,7 +183,7 @@ header {
   top: 0px;
 }
 
-/*確認画面*/
+/*=============確認画面=============*/
 .button_tweet {
   margin-left: 0;
   width: 49.6%;
@@ -194,7 +194,7 @@ header {
   width: 49.6%;
 }
 
-/*footer*/
+/*=============footer=============*/
 footer {
   background: #ffa84c; /* Old browsers */
   background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
