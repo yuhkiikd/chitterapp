@@ -1,28 +1,31 @@
 <%= render 'header' %>
 
-    <article class="chitter_form">
-      <section>
-        <%= render 'form' %>
-      </section>
-      <section>
-        <p>
-          <%= notice %>
-        </p>
-      </section>
-    </article>
+      <article class="chitter_form clearfix">
+        <h3>つぶやく</h3>
+        <section class="test">
+          <%= render 'form' %>
+        </section>
+        <section class="alart">
+          <p>
+            <%= notice %>
+          </p>
+        </section>
+      </article>
 
-    <article class="chitter_lists">
-      <div class="chitter_content">
-        <% @chitters.each do |chitter| %>
-          <div class="chitter_comment">
-            <%= simple_format(chitter.tweet) %>
-            <ul class="chitter_botton">
-              <li class="botton_edit"><%= link_to "編集", edit_chitter_path(chitter.id) %></li>
-              <li class="botton_delete"><%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %></li>
-            </ul>
-          </div>
-        <% end %>
-      </div>
-    </article>
+      <article class="chitter_lists clearfix">
+        <div class="chitter_content">
+          <% @chitters.each do |chitter| %>
+            <div class="chitter_comment">
+              <div class="comment_area">
+                <%= simple_format(chitter.tweet) %>
+              </div>
+              <ul class="chitter_button">
+                <li class="button_left"><%= link_to "編集", edit_chitter_path(chitter.id) %></li>
+                <li class="button_right"><%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %></li>
+              </ul>
+            </div>
+          <% end %>
+        </div>
+      </article>
 
 <%= render 'footer' %>

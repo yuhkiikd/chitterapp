@@ -1,41 +1,214 @@
-@for $i from 0 through 30 {
-  .mt#{$i * 5} {
-    margin-top:#{$i * 5}px !important;
-  }
-  .mb#{$i * 5} {
-    margin-bottom:#{$i * 5}px !important;
-  }
-  .pt#{$i * 5} {
-    padding-top:#{$i * 5}px !important;
-  }
-  .pb#{$i * 5} {
-    padding-bottom:#{$i * 5}px !important;
-  }
+/*ベーシック設定*/
+* {
+  padding-inline-start: 0;
 }
 
+.clearfix {
+  clear: both;
+}
+
+html , body {
+  height: 100%;
+}
+
+button {
+  border-width: 0;
+}
+
+/*ヘッダー*/
 header {
-  background: #f90;
-  color: #eee;
+  background: #ffa84c; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffa84c 0%,#ff7b0d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 ); /* IE6-9 */
   width :100%;
+
   h1 {
     margin: 0;
     padding: 15px 0;
     text-align: center;
+    & a {
+    color: #fff;
+    text-decoration: none;
+    }
   }
 }
 
+/*メイン部分*/
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/*入力フォーム*/
 .chitter_form {
   margin: 10px auto;
   width: 500px;
   section {
-    width: 100%;
     position: relative;
+    width: 100%;
+  }
+  & label {
+    display: none;
   }
 }
 
 .chitter_tweet {
   textarea {
     font-size: 0.85em;
+    padding: 10px;
+    width: 478px;
+  }
+}
+
+/*アラートメッセージ*/
+.alart {
+  float: left;
+  height: 50px;
+  p {
+    position: absolute;
+  }
+}
+
+.error_explanation li {
+  list-style-type: none;
+}
+
+/*ボタン基本*/
+.button_left {
+  background:#28aaa5;
+  color: #fff;
+  cursor: pointer;
+  float: left;
+  height: 38px;
+  list-style: none;
+  margin-left: 10px;
+  padding: 0;
+  position: relative;
+  width: 47.5%;
+  a {
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    line-height: 38px;
+    text-decoration: none;
+    top: 0;
     width: 100%;
+  }
+  &:hover {
+    opacity: 0.7
+  }
+}
+
+.button_right {
+  background:#dc3545;
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  height: 38px;
+  list-style: none;
+  margin-right: 10px;
+  padding:0;
+  position: relative;
+  width: 47.5%;
+  a {
+    color: #fff;
+    height: 100%;
+    left: 0;
+    line-height: 38px;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+  }
+  &:hover {
+    opacity: 0.7
+  }
+}
+
+/*コメント一覧*/
+.chitter_lists{
+  padding-bottom: 100px;  
+}
+
+.chitter_content {
+  margin: 10px auto;
+  width: 500px;
+
+  .chitter_comment {
+    border: 2px solid #fa0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: 476px;
+  }
+
+  .comment_area{
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  p {
+    width: 100%;
+  }
+
+}
+
+.chitter_button {
+  float: left;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.button_tweet_index {
+  margin-left: 0;
+  width: 100%;
+}
+
+.chitter_comment:after{
+  border: 13px solid;
+  border-color: transparent;
+  border-top: 20px solid #fa0;
+  content: "";
+  left: 15px;
+  position: absolute;
+  top: 0px;
+}
+
+/*確認画面*/
+.button_tweet {
+  margin-left: 0;
+  width: 49.6%;
+}
+
+.button_back {
+  margin-right: 0;
+  width: 49.6%;
+}
+
+/*footer*/
+footer {
+  background: #ffa84c; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffa84c 0%,#ff7b0d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 ); /* IE6-9 */
+  bottom: 0;
+  text-align: center;
+  display: table;
+  height: 100px;
+  position: absolute;
+  width: 100%;
+  p {
+    display: table-cell;
+    vertical-align: middle;
   }
 }
