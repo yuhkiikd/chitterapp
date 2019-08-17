@@ -15,7 +15,7 @@
       <div class="chitter_content">
         <% @chitters.each do |chitter| %>
           <div class="chitter_comment">
-            <%= chitter.tweet %>
+            <%= simple_format(chitter.tweet) %>
             <ul class="chitter_botton">
               <li class="botton_edit"><%= link_to "編集", edit_chitter_path(chitter.id) %></li>
               <li class="botton_delete"><%= link_to "削除", chitter_path(chitter.id), method: :delete,data: { confirm: '本当に削除してよろしいですか？' } %></li>
