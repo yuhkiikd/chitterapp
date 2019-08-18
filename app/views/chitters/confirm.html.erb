@@ -1,24 +1,22 @@
 <%= render 'header' %>
+      <article class="chitter_lists">
+        <div class="chitter_content">
+          <h3>この内容でつぶやく</h3>
+          <div class="chitter_comment">
+            <div class="comment_area">
+              <%= form_with(model: @chitter, url: chitters_path, local: true) do |form| %>
+                <%= form.hidden_field :tweet, rows: 6 %>
 
-    <article class="chitter_lists">
-      <div class="chitter_content">
-        <h3>この内容でつぶやく</h3>
-        <div class="chitter_comment">
-          <div class="comment_area">
-            <%= form_with(model: @chitter, url: chitters_path, local: true) do |form| %>
-              <%= form.hidden_field :tweet, rows: 6 %>
-
-              <div class="chitter_tweet">
-                <%= simple_format(@chitter.tweet) %>
-              </div>
-              <div class="chitter_button">
-                <button type="submit" class="button_left button_tweet" name="commit">つぶやく</button>
-                <button type="submit" class="button_right button_back" name="back">戻る</button>
-              </div>
-            <% end %>
+                <div class="chitter_tweet">
+                  <%= simple_format(@chitter.tweet) %>
+                </div>
+                <div class="chitter_button">
+                  <button type="submit" class="button_left button_tweet" name="commit">つぶやく</button>
+                  <button type="submit" class="button_right button_back" name="back">戻る</button>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
-    
+      </article>
 <%= render 'footer' %>
