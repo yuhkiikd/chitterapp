@@ -6,7 +6,6 @@
             <div class="comment_area">
               <%= form_with(model: @chitter, url: chitters_path, local: true) do |form| %>
                 <%= form.hidden_field :tweet, rows: 6 %>
-
                 <div class="chitter_tweet">
                   <%= simple_format(@chitter.tweet) %>
                 </div>
